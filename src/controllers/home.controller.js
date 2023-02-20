@@ -1,5 +1,15 @@
+const path = require("path");
+const fs = require("fs");
+
 const getHome = (req, res) => {
-  return res.send("Estoy en el Home");
+  const data = fs.readFileSync(
+    path.join(__dirname, "../database/products.json"),
+    "utf-8"
+  );
+
+  const products = JSON.parse(data);
+
+  return res.render("pages/home.ejs", { products });
 };
 
 module.exports = {

@@ -3,6 +3,6 @@ const { getProductDetail } = require("../controllers/productDetail.controller");
 
 const router = Router();
 
-router.get("/", getProductDetail);
+router.get("/:id", getProductDetail);
 
 module.exports = router;

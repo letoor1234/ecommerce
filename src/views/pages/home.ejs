@@ -1,0 +1,26 @@
+<%- include("../partials/header.ejs") %>
+<main>
+  <section>
+    <h1>Lista de productos</h1>
+    <ul class="flex flex-wrap gap-4 p-4 justify-center">
+      <% for(const product of products) { %> 
+      <a href="/product-detail/<%= product.id %>">
+        <li
+          class="border border-slate-200 cursor-pointer rounded-md p-4 hover:shadow-xl transition shadow-md w-56 h-56 flex justify-between flex-col"
+        >
+          <div class="h-3/4 overflow-hidden">
+            <img class="object-contain" src="<%= product.img %>" />
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-600"> <%= product.name %> </span>
+            <span class="font-bold text-emerald-600"
+              > $<%= product.price.toFixed(2) %>
+            </span>
+          </div>
+        </li>
+      </a>
+      <% } %>
+    </ul>
+  </section>
+</main>
+<%- include("../partials/footer.ejs") %>
