@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Producto 1",
+    "price": 349.996984,
+    "img": "https://picsum.photos/200/300",
+    "description": "lorem ipsum dolor sit amet, con lorem ipsum dolor sit amet, con lorem ipsum dolor sit amet, con lorem ipsum dolor sit amet, con lorem ipsum dolor sit amet, con"
+  },
+  {
+    "id": 2,
+    "name": "Producto 2",
+    "price": 250.454984,
+    "img": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 3,
+    "name": "Producto 3",
+    "price": 4552.215545654,
+    "img": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 4,
+    "name": "Producto 4",
+    "price": 349.994984,
+    "img": "https://picsum.photos/200/300"
+  },
+  {
+    "id": 5,
+    "name": "Producto 5",
+    "price": 349.994984,
+    "img": "https://picsum.photos/200/300"
+  }
+]
