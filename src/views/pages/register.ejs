@@ -1,0 +1,131 @@
+<%- include("../partials/header.ejs") %>
+<main class="p-4">
+  <div class="w-auto">
+    <h1 class="font-bold text-xl text-slate-600 drop-shadow-md">
+      Registrate en nuestro Ecommerce!
+    </h1>
+  </div>
+  <form
+    action="/auth/register"
+    method="post"
+    class="flex flex-col gap-4 w-full p-8 md:w-1/2"
+  >
+    <div class="flex flex-col gap-2">
+      <label for="username" class="font-bold">Nombre de usuario</label>
+      <input
+        type="text"
+        class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+        id="username"
+        name="username"
+        placeholder="Nombre de usuario"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="email" class="font-bold">Email</label>
+      <input
+        type="text"
+        class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+        id="email"
+        name="email"
+        placeholder="Email"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="password" class="font-bold">Contraseña</label>
+      <input
+        type="text"
+        class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+        id="password"
+        name="password"
+        placeholder="Contraseña"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+    </div>
+    <h2 class="fond-bold text-slate-600">Información personal</h2>
+    <hr />
+    <div class="flex flex-col gap-2">
+      <label for="name" class="font-bold">Nombre completo</label>
+      <input
+        type="text"
+        class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+        id="name"
+        name="name"
+        placeholder="Nombre completo"
+      />
+    </div>
+    <div class="flex gap-2 w-full">
+      <div class="flex flex-col gap-2">
+        <label for="dni" class="font-bold">DNI</label>
+        <input
+          type="number"
+          class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+          id="dni"
+          name="dni"
+          placeholder="DNI"
+        />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="phone" class="font-bold">Teléfono</label>
+        <input
+          type="number"
+          class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+          id="phone"
+          name="phone"
+          placeholder="Teléfono"
+        />
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <div class="flex flex-col gap-2">
+        <label for="state" class="font-bold">Provincia</label>
+        <input
+          type="text"
+          class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+          id="state"
+          name="state"
+          placeholder="Provincia"
+        />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="city" class="font-bold">Localidad</label>
+        <input
+          type="text"
+          class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+          id="city"
+          name="city"
+          placeholder="Localidad"
+        />
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <div class="flex flex-col gap-2">
+        <label for="address" class="font-bold">Dirección</label>
+        <input
+          type="text"
+          class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+          id="address"
+          name="address"
+          placeholder="Dirección"
+        />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="postalCode" class="font-bold">Código postal</label>
+        <input
+          type="number"
+          class="py-1 px-2 border border-slate-200 focus:ring-1 focus:ring-slate-400"
+          id="postalCode"
+          name="postalCode"
+          placeholder="Código postal"
+        />
+      </div>
+    </div>
+    <div class="w-full flex justify-end">
+      <button
+        class="px-4 py-2 text-slate-50 bg-blue-700 hover:bg-blue-800 transition-color rounded font-bold"
+      >
+        Crear!
+      </button>
+    </div>
+  </form>
+</main>
+<%- include("../partials/footer.ejs") %>

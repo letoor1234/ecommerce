@@ -2,11 +2,32 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const expressSession = require("express-session");
+
 const app = express();
 
 // Configuramos express
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  expressSession({
+    secret: process.env.SECRET,
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+    },
+  })
+);
+app.use(cookieParser());
+
+// Middleware
+const { getSessionStarted } = require("./middlewares/auth.middleware");
+app.use(getSessionStarted);
 
 // Agregamos rutas
 /* 
