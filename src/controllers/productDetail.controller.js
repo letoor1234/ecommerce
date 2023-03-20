@@ -15,7 +15,7 @@ const getProductDetail = (req, res) => {
 
   if (!product) return res.send("Producto no encontrado");
 
-  return res.render("pages/product-detail.ejs", { product });
+  return res.customRender("pages/product-detail.ejs", { product });
 };
 
 module.exports = {

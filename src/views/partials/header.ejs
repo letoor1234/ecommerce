@@ -39,6 +39,38 @@
             </li>
           </ul>
         </nav>
+        <% if(user){ %>
+        <button
+          class="rounded-full border border-slate-400 flex items-center justify-center p-1"
+          onclick="openMenu()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+            />
+          </svg>
+        </button>
+        <nav id="user-nav" class="absolute right-4 top-16 hidden border border-slate-400 shadow-md rounded-md">
+          <ul class="flex flex-col gap-2">
+            <li class="px-3 py-1">
+              <span> <%= user.username %> </span>
+            </li>
+            <li class="px-3 py-1">
+              <button onclick="sendSignout()">Cerrar sesión</button>
+            </li>
+          </ul>
+        </nav>
+
+        <% } else { %>
         <nav>
           <ul
             class="flex rounded-md rounded-top overflow-hidden shadow-md border border-slate-400"
@@ -55,5 +87,28 @@
             </li>
           </ul>
         </nav>
+        <% } %>
       </div>
     </header>
+    <script>
+      const menu = document.getElementById("user-nav");
+      const openMenu = () => {
+        menu.style.display = "block";
+      };
+      const closeMenu = () => {
+        menu.style.display = "none";
+      };
+
+      const sendSignout = () => {
+        fetch("/auth/signout", {
+          method: "GET",
+        }).then((res) => {
+          if (res?.ok) {
+            closeMenu();
+            location.reload();
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

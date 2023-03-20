@@ -9,7 +9,7 @@ const getHome = (req, res) => {
 
   const products = JSON.parse(data);
 
-  return res.render("pages/home.ejs", { products });
+  return res.customRender("pages/home.ejs", { products });
 };
 
 module.exports = {
