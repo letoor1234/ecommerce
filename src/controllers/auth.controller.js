@@ -4,8 +4,9 @@ const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 
 const getRegister = (req, res) => {
-  return res.render("pages/register.ejs");
+  return res.customRender("pages/register.ejs");
 };
+
 const registerUser = async (req, res) => {
   let user = req.body;
   if (!user) return res.send("Falta la información de usuario");
@@ -30,15 +31,58 @@ const registerUser = async (req, res) => {
   req.session.user = { id };
   req.session.save();
 
-  return res.send("Usuario creado!");
+  return res.redirect("/");
 };
 
 const getLogin = (req, res) => {
-  return res.send("Estoy en el inicio de sesion");
+  return res.customRender("pages/login.ejs");
+};
+
+const loginUser = async (req, res) => {
+  let user = req.body;
+  if (!user.username) return res.send("Falta el nombre de usuario");
+  if (!user.password) return res.send("Falta la contraseña");
+
+  const file = fs.readFileSync(
+    path.join(__dirname, "../database/users.json"),
+    "utf-8"
+  );
+
+  const data = JSON.parse(file);
+
+  const userFinded = data.find(
+    (thisUser) => thisUser.username === user.username
+  );
+
+  if (!userFinded) {
+    return res.send("Éste usuario no existe en nuestra base de datos");
+  }
+
+  const passwordMatches = bcrypt.compareSync(
+    user.password,
+    userFinded.password
+  );
+
+  if (!passwordMatches) {
+    return res.send("La contraseña no coincide con nuestra base de datos");
+  }
+
+  req.session.user = { id: userFinded.id };
+  req.session.save();
+
+  return res.redirect("/");
+};
+
+const signoutUser = (req, res) => {
+  req.session.destroy();
+
+  return res.json({ ok: true });
 };
 
 module.exports = {
   getLogin,
+  loginUser,
   getRegister,
   registerUser,
+  signoutUser,
 };

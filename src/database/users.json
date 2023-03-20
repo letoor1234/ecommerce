@@ -11,5 +11,57 @@
     "address": "Rivadavia 1063",
     "postalCode": "2300",
     "id": "b71dadbeb0f00da4cc3b519bb4803bcb578317f9"
+  },
+  {
+    "username": "",
+    "email": "",
+    "password": "$2b$06$JYj/rPjDQDu3wXPsP2GQCentFFQZXQ/t5jLVP.ZMwmReijKtaM532",
+    "name": "",
+    "dni": "",
+    "phone": "",
+    "state": "",
+    "city": "",
+    "address": "",
+    "postalCode": "",
+    "id": "57c503a144643690f46c34938960a8e93f223b64"
+  },
+  {
+    "username": "",
+    "email": "",
+    "password": "$2b$06$IJNFcETQjjzkkWHmHLUbZe7QQ1rUJpLU3Kt.ZwALgWwf6KRt0xexy",
+    "name": "",
+    "dni": "",
+    "phone": "",
+    "state": "",
+    "city": "",
+    "address": "",
+    "postalCode": "",
+    "id": "b39ecac9f6fec10942e21eb3070877a17326b65e"
+  },
+  {
+    "username": "angelmartinezwb",
+    "email": "angelmartinezwb@gmail.com",
+    "password": "$2b$06$pCqdnfCgObHkpvd64caMfeaLVCVD1SokKNRkS84xNQbYlALGz.5ju",
+    "name": "Angel N Martinez",
+    "dni": "123456789",
+    "phone": "456456456456",
+    "state": "Santa Fe",
+    "city": "Rafaela",
+    "address": "Rivadavia 1063",
+    "postalCode": "2300",
+    "id": "3a20d783dc6e85e86c2dcfadf22cdb99e8eeafe1"
+  },
+  {
+    "username": "angelmartinezwb",
+    "email": "angelmartinezwb@gmail.com",
+    "password": "$2b$06$eWkESoDR0Q7uSuZuYBYmeOxoBhbWbsPBR/Eayftj3ScMNfN9DKpoS",
+    "name": "Angel N Martinez",
+    "dni": "123456789",
+    "phone": "456456456456",
+    "state": "Santa Fe",
+    "city": "Rafaela",
+    "address": "Rivadavia 1063",
+    "postalCode": "2300",
+    "id": "de83cdb022132e96b8d60351628e5ac3a875ba60"
   }
 ]
