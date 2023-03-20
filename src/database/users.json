@@ -63,5 +63,18 @@
     "address": "Rivadavia 1063",
     "postalCode": "2300",
     "id": "de83cdb022132e96b8d60351628e5ac3a875ba60"
+  },
+  {
+    "username": "",
+    "email": "",
+    "password": "$2b$06$3o5r88hvESE19bDImreMFOnf6EifHTwrLv9VsByjn1.voW5MVv51u",
+    "name": "",
+    "dni": "",
+    "phone": "",
+    "state": "",
+    "city": "",
+    "address": "",
+    "postalCode": "",
+    "id": "43ec4098967725f87fb1944e69a1f9c45dc1c718"
   }
 ]

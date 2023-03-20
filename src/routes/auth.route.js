@@ -6,6 +6,7 @@ const {
   loginUser,
   signoutUser,
 } = require("../controllers/auth.controller");
+const { validateRegisterData } = require("../middlewares/auth.middleware");
 
 const router = Router();
 
@@ -13,7 +14,7 @@ router.get("/login", getLogin);
 router.post("/login", loginUser);
 
 router.get("/register", getRegister);
-router.post("/register", registerUser);
+router.post("/register", validateRegisterData, registerUser);
 
 router.get("/signout", signoutUser);
 

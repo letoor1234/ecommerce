@@ -31,6 +31,14 @@ const getSessionStarted = (req, res, next) => {
   next();
 };
 
+const validateRegisterData = (req, res, next) => {
+  const user = req.body;
+
+  console.log("Valdiate register");
+  next();
+};
+
 module.exports = {
   getSessionStarted,
+  validateRegisterData,
 };
